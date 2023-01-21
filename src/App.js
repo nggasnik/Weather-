@@ -40,6 +40,8 @@ function App() {
       const lat = resp.data[0].lat;
       const long = resp.data[0].lon;
 
+      console.log(resp)
+
       //set your api key here
       const apiKey = '';
 
@@ -91,17 +93,7 @@ function App() {
                       Current: {weatherData.main.temp} {unitTypeSymbol[unitType]}
                     </div>
                   </div>
-                  <div className="d-flex justify-content-center">
-                    <img src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} />
-                  </div>
-                  <div className='d-flex justify-content-between'>
-                    <div>
-                      {weatherData.weather[0].main}
-                    </div>
-                    <div>
-                      Feels like  {weatherData.main.feels_like} {unitTypeSymbol[unitType]}
-                    </div>
-                  </div>
+                
                 </Card>
               </Col>
             )}
